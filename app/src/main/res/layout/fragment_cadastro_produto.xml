@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.FragmentoCadastroProduto">
+
+    <TextView
+        android:id="@+id/txtTituloPC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/txtTitulo_margin50dp"
+        android:layout_marginTop="@dimen/txtTituto_marginTop52dp"
+        android:text="@string/txtView_titulo"
+        android:textColor="@color/txtColor_Black"
+        android:textFontWeight="200"
+        android:textSize="@dimen/txtSize_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextNomeCadastroProduto"
+        android:layout_width="388dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/txtEdit_nomeProduto"
+        android:padding="@dimen/txtPadding_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloPC" />
+
+    <EditText
+        android:id="@+id/editQuantidadeProduto"
+        android:layout_width="383dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/txtEdit_quantidadeProduto"
+        android:padding="@dimen/txtPadding_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeCadastroProduto"
+        tools:ignore="NotSibling" />
+
+    <EditText
+        android:id="@+id/editValorUnicoProduto"
+        android:layout_width="383dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/txtEdit_valorProduto"
+        android:padding="@dimen/txtPadding_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editQuantidadeProduto" />
+
+    <EditText
+        android:id="@+id/editReceita"
+        android:layout_width="383dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/txtEdit_receita"
+        android:padding="@dimen/txtPadding_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValorUnicoProduto" />
+
+    <Button
+        android:id="@+id/btnCadastrarProduto"
+        android:layout_width="387dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/btnCNovoProduto_vermelho"
+        android:text="@string/btnCadastrarProduto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editReceita" />
+
+    <Button
+        android:id="@+id/mostrarProdutos"
+        android:layout_width="387dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/btnColorVerPrdoutos_verde"
+        android:padding="@dimen/btnPadding_8dp"
+        android:text="@string/btnVerProdutos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarProduto" />
+</androidx.constraintlayout.widget.ConstraintLayout>

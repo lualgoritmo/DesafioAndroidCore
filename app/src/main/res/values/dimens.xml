@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margim_35dp">32dp</dimen>
+    <dimen name="padding_35dp">32dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="txtSize_20sp">20sp</dimen>
+    <dimen name="txtTitulo_margin50dp">50dp</dimen>
+    <dimen name="txtTituto_marginTop52dp">52dp</dimen>
+    <dimen name="editPadding_15dp">15dp</dimen>
+    <dimen name="btnPadding_8dp">8dp</dimen>
+    <dimen name="txtPadding_8dp">8dp</dimen>
+    <dimen name="txtTituloProdutosCadastrados">24sp</dimen>
+</resources>
