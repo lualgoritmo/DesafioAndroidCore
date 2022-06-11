@@ -11,6 +11,7 @@
         android:layout_height="75dp"
         android:layout_margin="20dp"
         android:padding="@dimen/btnPadding_8dp"
+        android:hint="Produtos Cadastrados Novos"
         android:textSize="@dimen/txtTituloProdutosCadastrados"
         android:layout_marginTop="@dimen/txtTitulo_margin50dp"
         android:text="@string/txtTitulo_produtosCadastrados" />

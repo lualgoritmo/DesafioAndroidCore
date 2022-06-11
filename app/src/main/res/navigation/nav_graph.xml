@@ -5,33 +5,35 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/fragmentHome">
     <fragment
-        android:id="@+id/fragmentoCadastroProduto"
-        android:name="br.com.zup.desafioandroidcore.Fragments.FragmentoCadastroProduto"
-        android:label="fragment_cadastrarnovo_produto"
-        tools:layout="@layout/fragment_cadastrarnovo_produto" >
+        android:id="@+id/fragmentoCadastrarProduto"
+        android:name="br.com.zup.desafioandroidcore.Fragments.FragmentoCadastrarProduto"
+        android:label="fragment_cadastrar_produto"
+        tools:layout="@layout/fragment_cadastrar_produto">
         <action
-            android:id="@+id/action_fragmentoCadastroProduto_to_fragmentoNovoProduto"
-            app:destination="@id/fragmentoNovoProduto" />
-        <action
-            android:id="@+id/action_fragmentoCadastroProduto_to_produtosCadastrados"
+            android:id="@+id/action_fragmentoCadastrarProduto_to_produtosCadastrados2"
             app:destination="@id/produtosCadastrados" />
+        <action
+            android:id="@+id/action_fragmentoCadastrarProduto_to_fragmentoNovoProduto"
+            app:destination="@id/fragmentoNovoProduto" />
     </fragment>
+
     <fragment
         android:id="@+id/produtosCadastrados"
         android:name="br.com.zup.desafioandroidcore.Fragments.ProdutosCadastrados"
         android:label="fragment_produtos_cadastrados"
         tools:layout="@layout/fragment_produtos_cadastrados" />
     <fragment
+        android:id="@+id/fragmentHome"
+        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
+        android:label="fragmentHome"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentoCadastrarProduto"
+            app:destination="@id/fragmentoCadastrarProduto" />
+    </fragment>
+    <fragment
         android:id="@+id/fragmentoNovoProduto"
         android:name="br.com.zup.desafioandroidcore.Fragments.FragmentoNovoProduto"
-        android:label="FragmentoNovoProduto" />
-    <fragment
-        android:id="@+id/fragmentHome"
-        android:name="br.com.zup.desafioandroidcore.FragmentHome"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_fragmentHome_to_fragmentoCadastroProduto"
-            app:destination="@id/fragmentoCadastroProduto" />
-    </fragment>
+        android:label="fragment_cadastrarnovo_produto"
+        tools:layout="@layout/fragment_cadastrarnovo_produto" />
 </navigation>

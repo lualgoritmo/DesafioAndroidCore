@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.zup.desafioandroidcore.R
 
-class FragmentoCadastroProduto : Fragment() {
+class FragmentoCadastrarProduto : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_cadastro_produto, container, false)
+        return inflater.inflate(R.layout.fragment_cadastrar_produto, container, false)
     }
 
 }
