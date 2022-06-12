@@ -6,27 +6,25 @@
     app:startDestination="@id/fragmentHome">
 
     <fragment
-        android:id="@+id/fragmentHome"
-        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
-        android:label="fragmentHome"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_fragmentHome_to_fragmentoCadastrarProduto"
-            app:destination="@id/fragmentoCadastrarProduto" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragmentoCadastrarProduto"
-        android:name="br.com.zup.desafioandroidcore.Fragments.FragmentoCadastrarProduto"
-        android:label="fragment_cadastrar_produto"
-        tools:layout="@layout/fragment_cadastrar_produto">
-        <action
-            android:id="@+id/action_fragmentoCadastrarProduto_to_produtosCadastrados2"
-            app:destination="@id/produtosCadastrados" />
-    </fragment>
-
-    <fragment
         android:id="@+id/produtosCadastrados"
         android:name="br.com.zup.desafioandroidcore.Fragments.ProdutosCadastrados"
         android:label="fragment_produtos_cadastrados"
         tools:layout="@layout/fragment_produtos_cadastrados" />
+    <fragment
+        android:id="@+id/produtoCadastrar"
+        android:name="br.com.zup.desafioandroidcore.Fragments.ProdutoCadastrar"
+        android:label="fragment_produto_cadastrar"
+        tools:layout="@layout/fragment_produto_cadastrar" >
+        <action
+            android:id="@+id/action_produtoCadastrar_to_produtosCadastrados"
+            app:destination="@id/produtosCadastrados" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
+        android:label="fragmentHome" >
+        <action
+            android:id="@+id/action_fragmentHome_to_produtoCadastrar2"
+            app:destination="@id/produtoCadastrar" />
+    </fragment>
 </navigation>

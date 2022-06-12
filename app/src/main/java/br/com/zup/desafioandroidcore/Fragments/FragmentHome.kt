@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.ActivityHomeBinding
+import br.com.zup.desafioandroidcore.databinding.FragmentHomeBinding
 
 class fragmentHome : Fragment() {
     private lateinit var binding: fragmentHome
@@ -15,6 +16,6 @@ class fragmentHome : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_cadastrar_produto, container, false)
+        return inflater.inflate(R.layout.fragment_produto_cadastrar, container, false)
     }
 }
