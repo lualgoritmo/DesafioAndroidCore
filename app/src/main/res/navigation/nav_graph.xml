@@ -3,28 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentHome">
-
+    app:startDestination="@id/fragmentHome3">
     <fragment
-        android:id="@+id/produtosCadastrados"
-        android:name="br.com.zup.desafioandroidcore.Fragments.ProdutosCadastrados"
-        android:label="fragment_produtos_cadastrados"
-        tools:layout="@layout/fragment_produtos_cadastrados" />
+        android:id="@+id/fragmentHome3"
+        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
+        android:label="SymCite São João" >
+        <action
+            android:id="@+id/action_fragmentHome3_to_produtoCadastrar3"
+            app:destination="@id/produtoCadastrar3" />
+    </fragment>
     <fragment
-        android:id="@+id/produtoCadastrar"
+        android:id="@+id/produtoCadastrar3"
         android:name="br.com.zup.desafioandroidcore.Fragments.ProdutoCadastrar"
-        android:label="fragment_produto_cadastrar"
+        android:label="Produtos"
         tools:layout="@layout/fragment_produto_cadastrar" >
         <action
-            android:id="@+id/action_produtoCadastrar_to_produtosCadastrados"
-            app:destination="@id/produtosCadastrados" />
+            android:id="@+id/action_produtoCadastrar3_to_produtosCadastrados2"
+            app:destination="@id/produtosCadastrados2" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentHome"
-        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
-        android:label="fragmentHome" >
-        <action
-            android:id="@+id/action_fragmentHome_to_produtoCadastrar2"
-            app:destination="@id/produtoCadastrar" />
-    </fragment>
+        android:id="@+id/produtosCadastrados2"
+        android:name="br.com.zup.desafioandroidcore.Fragments.ProdutosCadastrados"
+        android:label="Produtos Cadastrados"
+        tools:layout="@layout/fragment_produtos_cadastrados" />
 </navigation>

@@ -9,20 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtTituloListaProduto"
-            android:layout_width="0dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
-            android:hint="Lista de Produtos"
-            android:textSize="@dimen/txtApresentacaoSize_20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.398"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
         <ImageView
             android:id="@+id/imageViewListaProdw"
             android:layout_width="150dp"
@@ -35,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
             app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"/>
 
         <TextView
             android:id="@+id/txtMostrarNome"
@@ -44,8 +30,8 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="32dp"
             android:gravity="center"
-            android:hint="Lista de Produtos"
             android:textSize="@dimen/txtApresentacaoSize_20sp"
+            app:layout_goneMarginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.689"
@@ -69,6 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/txtMostrarReceita"
             android:layout_width="184dp"
@@ -82,7 +69,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.689"
             app:layout_constraintStart_toEndOf="@+id/imageViewListaProdw"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 

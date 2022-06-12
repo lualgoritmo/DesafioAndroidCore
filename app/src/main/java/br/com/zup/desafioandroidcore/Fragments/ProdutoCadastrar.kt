@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.desafioandroidcore.Fragments.Adapter.ProdutoAdapter
 import br.com.zup.desafioandroidcore.Model.Produto
+import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.FragmentProdutoCadastrarBinding
 import java.lang.Exception
 
@@ -27,10 +29,19 @@ class ProdutoCadastrar : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCadastrarProduto.setOnClickListener {
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_fragmentHome3_to_produtoCadastrar3)
             adicionarProdutoItem()
         }
+        mostrarListaProdutos()
     }
 
+    private fun mostrarListaProdutos() {
+        binding.btnMostrarProdutos.setOnClickListener {
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_produtoCadastrar3_to_produtosCadastrados2)
+        }
+    }
 
     private fun recuperarDadosEditText(): Produto? {
         val nomeProduto = binding.editTextNomeCadastroProduto.text.toString()
@@ -48,7 +59,10 @@ class ProdutoCadastrar : Fragment() {
                 )
             }
         } catch (e: Exception) {
-            binding.editReceita.error = "Campo Obrigatório"
+            binding.editTextNomeCadastroProduto.error = "O nome é um campo obrigatório"
+            binding.editQuantidadeProduto.error = "A quantidade é um campo obrigatório"
+            binding.editValorUnicoProduto.error = "O valor único é um campo obrigatório"
+            binding.editReceita.error = "A receita é um campo obrigatório"
         }
         return null
     }

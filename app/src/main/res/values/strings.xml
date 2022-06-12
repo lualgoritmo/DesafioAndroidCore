@@ -41,4 +41,6 @@
     <string name="btn_irProdutos">Ir para Produtos</string>
     <string name="txtApresentacaoSimCity">Sejam Bem Vindos! A festa de São João da SimCity</string>
     <string name="txtDescriptionImage">Imagem da Lista de Produtos Cadastrados</string>
+    <string name="tituloNavProdutos">Produtos</string>
+    <string name="tituloNavProdutosCadastrados">Produtos Cadastrados</string>
 </resources>
