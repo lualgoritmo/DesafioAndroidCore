@@ -9,13 +9,12 @@ import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.ActivityHomeBinding
 
 class fragmentHome : Fragment() {
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: fragmentHome
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cadastrar_produto, container, false)
     }
 }

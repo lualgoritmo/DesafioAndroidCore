@@ -14,7 +14,7 @@ class ProdutoAdapter(private var listaProduto: MutableList<Produto>) :
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ProdutoAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val produto = listaProduto[position]
         holder.exibirInformacaoesNaTextView(produto)
     }

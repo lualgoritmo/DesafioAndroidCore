@@ -22,9 +22,9 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaProdutosCadastrados"
         android:layout_width="348dp"
         android:layout_height="414dp"
-        android:id="@+id/rvListaProdutosCadastrados"
         android:layout_marginTop="48dp"
         android:padding="@dimen/editPadding_15dp"
         app:layout_constraintEnd_toEndOf="parent"
