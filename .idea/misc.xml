@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/activity_home.xml" value="0.178125" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/activity_splasch.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_cadastrar_produto.xml" value="0.178125" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_cadastrarnovo_produto.xml" value="0.178125" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_cadastro_produto.xml" value="0.178125" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_fragmento_cadastro_produto.xml" value="0.178125" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_home.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_page_init.xml" value="0.178125" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/fragment_produtos_cadastrados.xml" value="0.178125" />
+        <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/produto_item.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/luciano.nascimento/Desktop/DesafioAndroidCore/app/src/main/res/layout/protudo_item.xml" value="0.17708333333333334" />
       </map>
     </option>

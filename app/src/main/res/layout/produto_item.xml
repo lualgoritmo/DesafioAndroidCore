@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtTituloListaProduto"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:hint="Lista de Produtos"
+            android:textSize="@dimen/txtApresentacaoSize_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.398"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageViewListaProdw"
+            android:layout_width="150dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/txtDescriptionImage"
+            android:src="@drawable/cachorro_lindo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtMostrarNome"
+            android:layout_width="184dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:hint="Lista de Produtos"
+            android:textSize="@dimen/txtApresentacaoSize_20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.689"
+            app:layout_constraintStart_toEndOf="@+id/imageViewListaProdw"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txtMostrarQuantidade"
+            android:layout_width="184dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:hint="Lista de Produtos"
+            android:textSize="@dimen/txtApresentacaoSize_20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.689"
+            app:layout_constraintStart_toEndOf="@+id/imageViewListaProdw"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txtMostrarReceita"
+            android:layout_width="184dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:hint="Lista de Produtos"
+            android:textSize="@dimen/txtApresentacaoSize_20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.689"
+            app:layout_constraintStart_toEndOf="@+id/imageViewListaProdw"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloListaProduto"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

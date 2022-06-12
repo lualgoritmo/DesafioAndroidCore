@@ -10,4 +10,5 @@
     <dimen name="btnPadding_8dp">8dp</dimen>
     <dimen name="txtPadding_8dp">8dp</dimen>
     <dimen name="txtTituloProdutosCadastrados">24sp</dimen>
+    <dimen name="txtApresentacaoSize_20sp">20sp</dimen>
 </resources>

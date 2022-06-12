@@ -21,8 +21,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/txtApresentacaoHome"
-        android:textSize="20sp"
+        android:textFontWeight="200"
+        android:text="@string/txtApresentacaoSimCity"
+        android:padding="@dimen/editPadding_15dp"
+        android:layout_marginLeft="@dimen/editPadding_15dp"
+        android:layout_marginRight="@dimen/btnPadding_8dp"
+        android:textSize="@dimen/txtApresentacaoSize_20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,10 +35,12 @@
     <Button
         android:layout_width="387dp"
         android:layout_height="54dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/btn_irProdutos"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/btnCNovoProduto_vermelho"
+        android:text="@string/btn_irProdutos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtHome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
