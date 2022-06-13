@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,9 +18,7 @@ import java.lang.Exception
 
 class ProdutoCadastrar : Fragment() {
     private lateinit var binding: FragmentProdutoCadastrarBinding
-    private val produtoAdapter: ProdutoAdapter by lazy {
-        ProdutoAdapter(arrayListOf())
-    }
+    private val novaListaProduto = mutableListOf<Produto>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,22 +30,33 @@ class ProdutoCadastrar : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnCadastrarProduto.setOnClickListener {
-            adicionarProdutoItem()
-        }
+        clickBtn()
         mostrarListaProdutos()
 
     }
 
-    private fun mostrarListaProdutos() {
-        binding.btnMostrarProdutos.setOnClickListener {
-            NavHostFragment.findNavController(this)
-                .navigate(R.id.action_produtoCadastrar3_to_produtosCadastrados2)
+    private fun clickBtn() {
+        binding.btnCadastrarProduto.setOnClickListener {
+            adicionarProdutoItem()
         }
     }
-    private fun limparCampos() {
-        println("Limpos")
+
+    //ENVIANDO OS PRODUTOS COM BUNDLE
+    private fun mostrarListaProdutos() {
+        binding.btnMostrarProdutos.setOnClickListener {
+            val bundle = bundleOf("PRODUTO" to novaListaProduto)
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_produtoCadastrar3_to_produtosCadastrados2,bundle)
+        }
     }
+
+    private fun limparCampos() {
+        binding.editTextNomeCadastroProduto.text.clear()
+        binding.editQuantidadeProduto.text.clear()
+        binding.editValorUnicoProduto.text.clear()
+        binding.editReceita.text.clear()
+    }
+
     private fun recuperarDadosEditText(): Produto? {
         val nomeProduto = binding.editTextNomeCadastroProduto.text.toString()
         val quantidadeProduto = binding.editQuantidadeProduto.text.toString()
@@ -55,7 +65,6 @@ class ProdutoCadastrar : Fragment() {
 
         try {
             if (nomeProduto.isNotEmpty() && quantidadeProduto.isNotEmpty() && valorUnitarioProduto.isNotEmpty() && receitaProduto.isNotEmpty()) {
-                limparCampos()
                 return Produto(
                     nomeProduto,
                     quantidadeProduto.toInt(),
@@ -71,13 +80,13 @@ class ProdutoCadastrar : Fragment() {
         }
         return null
     }
-   
+
     private fun adicionarProdutoItem() {
-        val novaListaProduto = mutableListOf<Produto>()
         val produto = recuperarDadosEditText()
         if (produto != null) {
             novaListaProduto.add(produto)
+            Toast.makeText(context, "Produto cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+            limparCampos()
         }
-        produtoAdapter.atualizarListaProduto(novaListaProduto)
     }
 }

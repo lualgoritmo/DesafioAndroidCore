@@ -27,11 +27,19 @@ class ProdutosCadastrados : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recebendoDados()
+        exibirRecyclerView()
     }
 
-    private fun ExibirRecyclerView(){
+    private fun exibirRecyclerView(){
         binding.rvListaProdutosCadastrados.adapter = produtoAdapter
         binding.rvListaProdutosCadastrados.layoutManager = LinearLayoutManager(context)
+    }
+    private fun recebendoDados() {
+        val listaRecebida = arguments?.getParcelableArrayList<Produto>("PRODUTO")
+        if (listaRecebida != null) {
+            produtoAdapter.atualizarListaProduto(listaRecebida)
+        }
     }
 
 }
