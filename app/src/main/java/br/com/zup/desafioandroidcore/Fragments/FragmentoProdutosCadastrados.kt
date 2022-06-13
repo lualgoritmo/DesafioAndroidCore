@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.desafioandroidcore.Fragments.Adapter.ProdutoAdapter
 import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.FragmentProdutosCadastradosBinding
@@ -22,6 +23,10 @@ class ProdutosCadastrados : Fragment() {
     ): View {
         binding = FragmentProdutosCadastradosBinding.inflate(inflater, container, false)
         return binding.root
+    }
+    private fun exibirRecycler(){
+        binding.rvListaProdutosCadastrados.adapter = produtoAdapter
+        binding.rvListaProdutosCadastrados.layoutManager = LinearLayoutManager(context)
     }
 
 }

@@ -6,33 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ProdutoCadastrar">
 
-    <TextView
-        android:id="@+id/txtTituloPC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/txtTitulo_margin50dp"
-        android:layout_marginTop="@dimen/txtTituto_marginTop52dp"
-        android:text="@string/txtView_titulo"
-        android:textColor="@color/txtColor_Black"
-        android:textFontWeight="200"
-        android:textSize="@dimen/txtSize_20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <EditText
         android:id="@+id/editTextNomeCadastroProduto"
         android:layout_width="388dp"
         android:layout_height="66dp"
-        android:layout_marginTop="24dp"
         android:hint="@string/txtEdit_nomeProduto"
         android:padding="@dimen/txtPadding_8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloPC" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editQuantidadeProduto"
