@@ -1,9 +1,9 @@
-package br.com.zup.desafioandroidcore.Splash
+package br.com.zup.desafioandroidcore.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.zup.desafioandroidcore.Home.HomeActivity
+import br.com.zup.desafioandroidcore.home.HomeActivity
 import br.com.zup.desafioandroidcore.R
 import java.util.*
 

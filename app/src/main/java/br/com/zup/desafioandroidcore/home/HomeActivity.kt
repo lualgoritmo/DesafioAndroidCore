@@ -1,4 +1,4 @@
-package br.com.zup.desafioandroidcore.Home
+package br.com.zup.desafioandroidcore.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,20 +11,19 @@ import br.com.zup.desafioandroidcore.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
-
+    private lateinit var navHostFragment: NavHostFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
-        val navHostFra = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val nav: NavController = navHostFra.navController
+        navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
+        val nav: NavController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, nav)
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            this.finish()
+            navHostFragment.navController.popBackStack()
             return true
         }
         return super.onOptionsItemSelected(item)

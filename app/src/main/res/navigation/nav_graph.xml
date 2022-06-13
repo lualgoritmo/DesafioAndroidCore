@@ -6,7 +6,7 @@
     app:startDestination="@id/fragmentHome3">
     <fragment
         android:id="@+id/fragmentHome3"
-        android:name="br.com.zup.desafioandroidcore.Fragments.fragmentHome"
+        android:name="br.com.zup.desafioandroidcore.home.FragmentHome"
         android:label="SymCite São João" >
         <action
             android:id="@+id/action_fragmentHome3_to_produtoCadastrar3"
@@ -14,8 +14,8 @@
     </fragment>
     <fragment
         android:id="@+id/produtoCadastrar3"
-        android:name="br.com.zup.desafioandroidcore.Fragments.ProdutoCadastrar"
-        android:label="Produtos"
+        android:name="br.com.zup.desafioandroidcore.produtos.CadastrarProdutoFragment"
+        android:label="Cadastrar Produto"
         tools:layout="@layout/fragment_produto_cadastrar" >
         <action
             android:id="@+id/action_produtoCadastrar3_to_produtosCadastrados2"
@@ -23,7 +23,16 @@
     </fragment>
     <fragment
         android:id="@+id/produtosCadastrados2"
-        android:name="br.com.zup.desafioandroidcore.Fragments.ProdutosCadastrados"
+        android:name="br.com.zup.desafioandroidcore.produtos.ProdutosCadastrados"
         android:label="Produtos Cadastrados"
-        tools:layout="@layout/fragment_produtos_cadastrados" />
+        tools:layout="@layout/fragment_produtos_cadastrados" >
+        <action
+            android:id="@+id/action_produtosCadastrados2_to_detalheProdutoFragment"
+            app:destination="@id/detalheProdutoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalheProdutoFragment"
+        android:name="br.com.zup.desafioandroidcore.produtos.DetalheProdutoFragment"
+        android:label="fragment_detalhe_produto"
+        tools:layout="@layout/fragment_detalhe_produto" />
 </navigation>

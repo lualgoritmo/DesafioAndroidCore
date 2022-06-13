@@ -1,12 +1,12 @@
-package br.com.zup.desafioandroidcore.Fragments.Adapter
+package br.com.zup.desafioandroidcore.produtos.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.zup.desafioandroidcore.Model.Produto
+import br.com.zup.desafioandroidcore.model.Produto
 import br.com.zup.desafioandroidcore.databinding.ProdutoItemBinding
 
-class ProdutoAdapter(private var listaProduto: MutableList<Produto>) :
+class ProdutoAdapter(private var listaProduto: MutableList<Produto>, private val onClick:(produto:Produto)->Unit) :
     RecyclerView.Adapter<ProdutoAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,6 +17,9 @@ class ProdutoAdapter(private var listaProduto: MutableList<Produto>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val produto = listaProduto[position]
         holder.exibirInformacaoesNaTextView(produto)
+        holder.itemView.setOnClickListener {
+            onClick(produto)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -25,9 +28,7 @@ class ProdutoAdapter(private var listaProduto: MutableList<Produto>) :
 
     class ViewHolder(val binding: ProdutoItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun exibirInformacaoesNaTextView(produto: Produto) {
-            binding.txtMostrarNome.text = produto.getNomeProduto()
-            binding.txtMostrarQuantidade.text = produto.quantidadeProduto().toString()
-            binding.txtMostrarReceita.text = produto.getReceita()
+            binding.txtNome.text = "${produto.quantidade} - ${produto.nome}"
         }
     }
     fun atualizarListaProduto(novaListaProduto: MutableList<Produto>) {

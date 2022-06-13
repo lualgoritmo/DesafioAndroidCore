@@ -1,4 +1,4 @@
-package br.com.zup.desafioandroidcore.Fragments
+package br.com.zup.desafioandroidcore.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.ActivityHomeBinding
 import br.com.zup.desafioandroidcore.databinding.FragmentHomeBinding
 
-class fragmentHome : Fragment() {
+class FragmentHome : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(

@@ -1,4 +1,4 @@
-package br.com.zup.desafioandroidcore.Fragments
+package br.com.zup.desafioandroidcore.produtos
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,17 +8,14 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import br.com.zup.desafioandroidcore.Fragments.Adapter.ProdutoAdapter
-import br.com.zup.desafioandroidcore.Model.Produto
+import br.com.zup.desafioandroidcore.model.Produto
 import br.com.zup.desafioandroidcore.R
 import br.com.zup.desafioandroidcore.databinding.FragmentProdutoCadastrarBinding
 import java.lang.Exception
 
-class ProdutoCadastrar : Fragment() {
+class CadastrarProdutoFragment : Fragment() {
     private lateinit var binding: FragmentProdutoCadastrarBinding
-    private val novaListaProduto = mutableListOf<Produto>()
+    private val produtos = mutableListOf<Produto>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,24 +27,15 @@ class ProdutoCadastrar : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        clickBtn()
-        mostrarListaProdutos()
-
-    }
-
-    private fun clickBtn() {
         binding.btnCadastrarProduto.setOnClickListener {
             adicionarProdutoItem()
         }
-    }
-
-    //ENVIANDO OS PRODUTOS COM BUNDLE
-    private fun mostrarListaProdutos() {
         binding.btnMostrarProdutos.setOnClickListener {
-            val bundle = bundleOf("PRODUTO" to novaListaProduto)
+            val bundle = bundleOf("PRODUTOS" to produtos)
             NavHostFragment.findNavController(this)
                 .navigate(R.id.action_produtoCadastrar3_to_produtosCadastrados2,bundle)
         }
+
     }
 
     private fun limparCampos() {
@@ -62,17 +50,15 @@ class ProdutoCadastrar : Fragment() {
         val quantidadeProduto = binding.editQuantidadeProduto.text.toString()
         val valorUnitarioProduto = binding.editValorUnicoProduto.text.toString()
         val receitaProduto = binding.editReceita.text.toString()
-
-        try {
-            if (nomeProduto.isNotEmpty() && quantidadeProduto.isNotEmpty() && valorUnitarioProduto.isNotEmpty() && receitaProduto.isNotEmpty()) {
-                return Produto(
-                    nomeProduto,
-                    quantidadeProduto.toInt(),
-                    valorUnitarioProduto.toDouble(),
-                    receitaProduto
-                )
-            }
-        } catch (e: Exception) {
+        if (nomeProduto.isNotEmpty() && quantidadeProduto.isNotEmpty() && valorUnitarioProduto.isNotEmpty() && receitaProduto.isNotEmpty()) {
+            return Produto(
+                nomeProduto,
+                quantidadeProduto.toDouble(),
+                valorUnitarioProduto.toDouble(),
+                receitaProduto
+            )
+        }
+        else {
             binding.editTextNomeCadastroProduto.error = "O nome é um campo obrigatório"
             binding.editQuantidadeProduto.error = "A quantidade é um campo obrigatório"
             binding.editValorUnicoProduto.error = "O valor único é um campo obrigatório"
@@ -84,7 +70,7 @@ class ProdutoCadastrar : Fragment() {
     private fun adicionarProdutoItem() {
         val produto = recuperarDadosEditText()
         if (produto != null) {
-            novaListaProduto.add(produto)
+            produtos.add(produto)
             Toast.makeText(context, "Produto cadastrado com sucesso!", Toast.LENGTH_LONG).show()
             limparCampos()
         }
