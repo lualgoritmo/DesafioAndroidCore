@@ -27,24 +27,9 @@ class ProdutosCadastrados : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adicionarListaProdutos()
     }
-    private fun adicionarListaProdutos() {
-        var listaProduto = mutableListOf<Produto>()
-        var novaLista = arguments?.getParcelableArrayList<Produto>("PRODUTO")
 
-        if (novaLista != null) {
-           if (listaProduto.size == 0) {
-               listaProduto = novaLista
-           }
-        }
-        else {
-            novaLista?.let { listaProduto.addAll(it) }
-        }
-        produtoAdapter.atualizarListaProduto(listaProduto)
-        exibirRecycler()
-    }
-    private fun exibirRecycler(){
+    private fun ExibirRecyclerView(){
         binding.rvListaProdutosCadastrados.adapter = produtoAdapter
         binding.rvListaProdutosCadastrados.layoutManager = LinearLayoutManager(context)
     }

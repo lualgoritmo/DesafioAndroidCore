@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import br.com.zup.desafioandroidcore.Fragments.Adapter.ProdutoAdapter
 import br.com.zup.desafioandroidcore.Model.Produto
 import br.com.zup.desafioandroidcore.R
@@ -29,11 +32,10 @@ class ProdutoCadastrar : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCadastrarProduto.setOnClickListener {
-            NavHostFragment.findNavController(this)
-                .navigate(R.id.action_fragmentHome3_to_produtoCadastrar3)
             adicionarProdutoItem()
         }
         mostrarListaProdutos()
+
     }
 
     private fun mostrarListaProdutos() {
@@ -42,7 +44,9 @@ class ProdutoCadastrar : Fragment() {
                 .navigate(R.id.action_produtoCadastrar3_to_produtosCadastrados2)
         }
     }
-
+    private fun limparCampos() {
+        println("Limpos")
+    }
     private fun recuperarDadosEditText(): Produto? {
         val nomeProduto = binding.editTextNomeCadastroProduto.text.toString()
         val quantidadeProduto = binding.editQuantidadeProduto.text.toString()
@@ -51,6 +55,7 @@ class ProdutoCadastrar : Fragment() {
 
         try {
             if (nomeProduto.isNotEmpty() && quantidadeProduto.isNotEmpty() && valorUnitarioProduto.isNotEmpty() && receitaProduto.isNotEmpty()) {
+                limparCampos()
                 return Produto(
                     nomeProduto,
                     quantidadeProduto.toInt(),
@@ -66,7 +71,7 @@ class ProdutoCadastrar : Fragment() {
         }
         return null
     }
-
+   
     private fun adicionarProdutoItem() {
         val novaListaProduto = mutableListOf<Produto>()
         val produto = recuperarDadosEditText()
